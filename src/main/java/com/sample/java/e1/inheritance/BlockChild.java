@@ -18,7 +18,7 @@ public class BlockChild extends BlockParent {
 	
 	public static void main(String[] args) {
 		
-		// staic block will get executed first for parent and then for child.
+		// static block will get executed first for parent and then for child.
 		// even if we don't have anything in main method here both static blocks will be executed.
 		// as soon as class is loaded
 		
