@@ -2,8 +2,10 @@ package com.sample.java.e2.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ListExample {
@@ -55,5 +57,21 @@ public class ListExample {
 		linkedList.remove(1);
 		linkedList.forEach(System.out::println);
 
+		
+		List<Map<String, String>> refIdsList = new ArrayList();
+		Map m1 = new HashMap();
+		m1.put("OBJECT_ID", "123-1");
+		Map m2 = new HashMap();
+		m2.put("OBJECT_ID", "123-2");
+		Map m3 = new HashMap();
+		m3.put("OBJECT_ID", "123-3");
+
+		refIdsList.add(m1);
+		refIdsList.add(m2);
+		refIdsList.add(m3);
+		
+		System.out.println(refIdsList);
+		List refIds = refIdsList.stream().map(m->m.get("OBJECT_ID")).collect(Collectors.toList());
+		System.out.println(refIds);
 	}
 }
